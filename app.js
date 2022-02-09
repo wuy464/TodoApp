@@ -80,7 +80,7 @@ document.body.addEventListener("click", async function (e) {
     getTask();
   }
   if (e.target.matches(".todo-task-text")) {
-    e.target.classList.add("active");
+    e.target.classList.toggle("active");
   }
 });
 

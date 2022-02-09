@@ -1,0 +1,173 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+  margin: 0;
+}
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+/* remove animation for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+html {
+  font-family: "Poppins", sans-serif;
+}
+h2 {
+  font-size: 35px;
+  text-align: center;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #f62682, #6a5af9);
+}
+.todo {
+  max-width: 1000px;
+  margin: 30px auto;
+}
+.todo-form {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.todo-input {
+  width: 400px;
+  height: 50px;
+  border-radius: 12px;
+  outline: none;
+  border: 0;
+  background-image: linear-gradient(to right, #f62682, #6a5af9);
+  color: white;
+  padding: 0 20px;
+}
+.todo-input::placeholder {
+  color: #ccc;
+}
+.todo-btn {
+  outline: none;
+  border: 0;
+  width: 100px;
+  height: 50px;
+  border-radius: 12px;
+  font-weight: 500;
+  background-image: linear-gradient(to right, #f62682, #6a5af9);
+  color: white;
+  cursor: pointer;
+}
+.todo-body {
+  margin: 0 auto;
+  max-width: 500px;
+}
+.todo-task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.todo-task-text {
+  padding: 10px 20px;
+  width: 400px;
+  background-color: #eee;
+  border: 0;
+  outline: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.todo-task-text.active {
+  color: #ccc;
+  font-style: italic;
+}
+.todo-tool {
+  display: flex;
+  column-gap: 15px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.loading {
+  display: inline-flex;
+  animation: loading2 1s infinite;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.loading {
+  position: relative;
+  height: 50px;
+}
+.loading:after,
+.loading:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+.loading:before {
+  z-index: 5;
+  border: 3px dashed #f62682;
+  border-left: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-animation: dashed 1s linear infinite;
+  animation: dashed 1s linear infinite;
+}
+.loading:after {
+  z-index: 10;
+  border: 3px solid #f62682;
+  border-left: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-animation: dashed 1s ease infinite;
+  animation: dashed 1s ease infinite;
+}
+@keyframes dashed {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .todo {
+    max-width: 100%;
+    padding: 30px;
+  }
+  .todo-input {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  .todo-task-text {
+    max-width: 90%;
+  }
+}
